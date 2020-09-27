@@ -330,6 +330,7 @@ public class AppsflyerSdkPlugin implements MethodCallHandler, FlutterPlugin, Act
         }
 
         String afDevKey = (String) call.argument(AppsFlyerConstants.AF_DEV_KEY);
+        String afDomainName = (String) call.argument(AppsFlyerConstants.AF_DOMAIN_NAME);
         if(afDevKey == null || afDevKey.equals("")){
             result.error(null,"AF Dev Key is empty","AF dev key cannot be empty");
         }
@@ -348,6 +349,9 @@ public class AppsflyerSdkPlugin implements MethodCallHandler, FlutterPlugin, Act
             instance.setDebugLog(false);
         }
 
+        if(afDomainName != null || !afDomainName.equals("")){
+            instance.setOneLinkCustomDomain(afDomainName);
+        }
         instance.init(afDevKey, gcdListener, mContext);
         instance.trackEvent(mContext, null, null);
         instance.startTracking(mApplication, afDevKey);

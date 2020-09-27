@@ -197,6 +197,7 @@
 - (void)initSdkWithCall:(FlutterMethodCall*)call result:(FlutterResult)result{
     NSString* devKey = nil;
     NSString* appId = nil;
+    NSString* appDomain = nil;
     NSTimeInterval timeToWaitForATTUserAuthorization = 0;
     BOOL isDebug = NO;
     BOOL isConversionData = NO;
@@ -206,6 +207,7 @@
 
     devKey = call.arguments[afDevKey];
     appId = call.arguments[afAppId];
+    appDomain = call.arguments[afDomainName];
     timeToWaitForATTUserAuthorization = [(id)call.arguments[afTimeToWaitForATTUserAuthorization] doubleValue];
 
     isDebugValue = call.arguments[afIsDebug];
@@ -224,6 +226,7 @@
     
     [AppsFlyerLib shared].appleAppID = appId;
     [AppsFlyerLib shared].appsFlyerDevKey = devKey;
+    [AppsFlyerLib shared].oneLinkCustomDomains = @[appDomain];
     [AppsFlyerLib shared].isDebug = isDebug;
     [[AppsFlyerLib shared] start];
     

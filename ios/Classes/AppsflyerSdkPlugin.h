@@ -7,6 +7,7 @@
 
 // Appsflyer JS objects
 #define afDevKey                            @"afDevKey"
+#define afDomainName                        @"afDomainName"
 #define afAppId                             @"afAppId"
 #define afIsDebug                           @"isDebug"
 #define afTimeToWaitForATTUserAuthorization @"timeToWaitForATTUserAuthorization"
