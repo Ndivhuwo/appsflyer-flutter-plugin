@@ -349,7 +349,7 @@ public class AppsflyerSdkPlugin implements MethodCallHandler, FlutterPlugin, Act
             instance.setDebugLog(false);
         }
 
-        if(afDomainName != null || !afDomainName.equals("")){
+        if(afDomainName != null && !afDomainName.equals("")){
             instance.setOneLinkCustomDomain(afDomainName);
         }
         instance.init(afDevKey, gcdListener, mContext);

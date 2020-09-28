@@ -5,12 +5,12 @@ class AppsFlyerOptions {
   final bool showDebug;
   final String appId;
   final double timeToWaitForATTUserAuthorization;
-  final String appCustomDomain;
+  final String afDomainName;
 
   AppsFlyerOptions(
       {@required this.afDevKey,
       this.showDebug = false,
       this.appId = "",
-      this.appCustomDomain = "",
+      this.afDomainName = "",
       this.timeToWaitForATTUserAuthorization});
 }

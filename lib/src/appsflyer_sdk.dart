@@ -41,10 +41,13 @@ class AppsflyerSdk {
     Map<String, dynamic> validatedOptions = {};
     //validations
     dynamic devKey = options.afDevKey;
+    dynamic domainName = options.afDomainName;
     assert(devKey != null);
     assert(devKey is String);
+    assert(domainName is String);
 
     validatedOptions[AppsflyerConstants.AF_DEV_KEY] = devKey;
+    validatedOptions[AppsflyerConstants.AF_DOMAIN_NAME] = domainName;
 
     if (Platform.isIOS) {
       dynamic appID = options.appId;
@@ -72,10 +75,12 @@ class AppsflyerSdk {
     Map<String, dynamic> afOptions = {};
     //validations
     dynamic devKey = options[AppsflyerConstants.AF_DEV_KEY];
+    dynamic domainName = options[AppsflyerConstants.AF_DOMAIN_NAME];
     assert(devKey != null);
     assert(devKey is String);
 
     afOptions[AppsflyerConstants.AF_DEV_KEY] = devKey;
+    afOptions[AppsflyerConstants.AF_DOMAIN_NAME] = domainName;
 
     if (Platform.isIOS) {
       if (options[AppsflyerConstants.AF_TIME_TO_WAIT_FOR_ATT_USER_AUTHORIZATION] !=
